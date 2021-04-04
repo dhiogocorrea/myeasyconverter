@@ -2,10 +2,18 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Home from './pages/Home/index';
 import VideoCompress from './pages/VideoCompress';
+import VideoFormatConvert from './pages/VideoFormatConvert';
 
 const ROUTES = [
   {path: '/', key: 'ROOT', needsAuth: false, exact: true, component: () => <Home />},
-  {path: '/videocompress', key: 'VIDEO_COMPRESS', needsAuth: false, exact: true, component: () => <VideoCompress />},
+  {path: '/video-compress', key: 'VIDEO_COMPRESS', needsAuth: false, exact: true, component: () => <VideoCompress />},
+  {
+    path: '/video-format-converter',
+    key: 'VIDEO_FORMAT_CONVERT',
+    needsAuth: false,
+    exact: true,
+    component: () => <VideoFormatConvert />,
+  },
 ];
 
 export default ROUTES;

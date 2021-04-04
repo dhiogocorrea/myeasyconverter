@@ -8,7 +8,11 @@ const Home = () => {
   const history = useHistory();
 
   const goToVideoCompress = () => {
-    history.push('/videocompress');
+    history.push('/video-compress');
+  };
+
+  const goToVideoFormatConverter = () => {
+    history.push('/video-format-converter');
   };
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
@@ -26,13 +30,27 @@ const Home = () => {
           style={{width: 240}}
           cover={
             <img
+              alt="video format convert"
+              src="https://cdn2.vectorstock.com/i/1000x1000/40/91/video-conversion-icon-vector-21024091.jpg"
+            />
+          }
+          onClick={() => goToVideoFormatConverter()}
+        >
+          <Card.Meta title="Video Format Converter" description="Convert your video file to another format" />
+        </Card>
+        <Divider type="vertical" />
+        <Card
+          hoverable
+          style={{width: 240}}
+          cover={
+            <img
               alt="video compress"
               src="https://image.shutterstock.com/image-vector/video-compressing-icon-shows-cube-260nw-1017168082.jpg"
             />
           }
           onClick={() => goToVideoCompress()}
         >
-          <Card.Meta title="Online Video compress" description="Reduce the size of your video in a simple way." />
+          <Card.Meta title="Video Compress" description="Reduce the size of your video in a simple way." />
         </Card>
       </Row>
     </div>

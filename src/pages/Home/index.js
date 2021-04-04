@@ -17,11 +17,11 @@ const Home = () => {
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
       <Space direction="vertical" align="center">
-        <Title level={1}>
-          Welcome to <b style={{color: 'red'}}>My Ease Converter</b>
+        <Title level={1} style={{color: 'red'}}>
+          My Easy Converter
         </Title>
 
-        <Title level={4}>Several video tools to make your day easier online.</Title>
+        <Title level={4}>Several tools to make your day easier online.</Title>
       </Space>
       <Divider />
       <Row>

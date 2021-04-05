@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Divider, Space, Typography, Upload, message, Spin, Button, Select} from 'antd';
 import {InboxOutlined, DownloadOutlined} from '@ant-design/icons';
 import {createFFmpeg, fetchFile} from '@ffmpeg/ffmpeg';
+import MyConsole from '../../components/MyConsole';
 
 const {Title} = Typography;
 const {Dragger} = Upload;
@@ -119,6 +120,7 @@ const VideoFormatConvert = () => {
         Convert now!
       </Button>
       <Divider />
+      <MyConsole showLog={isProcessing === true} />
       <Space direction="vertical" align="center">
         {videoSrc !== null && (
           <Button type="primary" size="large" icon={<DownloadOutlined />} href={videoSrc} download>

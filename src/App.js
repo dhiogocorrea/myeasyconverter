@@ -25,7 +25,7 @@ function App() {
           </BrowserRouter>
         </Content>
 
-        <Footer style={{textAlign: 'center'}}>MyEaseConverter ©2021</Footer>
+        <Footer style={{textAlign: 'center'}}>MyEasyConverter ©2021</Footer>
       </Layout>
     </Layout>
   );

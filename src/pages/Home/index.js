@@ -21,7 +21,7 @@ const Home = () => {
           My Easy Converter
         </Title>
 
-        <Title level={4}>Several tools to make your day easier online.</Title>
+        <Title level={4}>Several tools to make your online day easier.</Title>
       </Space>
       <Divider />
       <Row>

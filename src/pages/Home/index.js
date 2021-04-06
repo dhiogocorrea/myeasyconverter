@@ -24,7 +24,7 @@ const Home = () => {
         <Title level={4}>Several tools to make your online day easier.</Title>
       </Space>
       <Divider />
-      <Row>
+      <Row direction="vertical" align="center">
         <Card
           hoverable
           style={{width: 240}}

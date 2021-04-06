@@ -38,7 +38,7 @@ export const AboutSection = params => {
         <Typography.Text>&nbsp;/&nbsp;</Typography.Text>
         <Typography.Link href="/video-compress">Video Compress</Typography.Link>
         <Typography.Text>&nbsp;/&nbsp;</Typography.Text>
-        <Typography.Link href="/video-trimmer">Video Trimmer</Typography.Link>
+        <Typography.Link href="/video-cut">Video Cut</Typography.Link>
       </Row>
     </div>
   );

@@ -28,12 +28,7 @@ const Home = () => {
         <Card
           hoverable
           style={{width: 240}}
-          cover={
-            <img
-              alt="video format convert"
-              src="https://cdn2.vectorstock.com/i/1000x1000/40/91/video-conversion-icon-vector-21024091.jpg"
-            />
-          }
+          cover={<img alt="video format convert" src="assets/images/video_convert.svg" />}
           onClick={() => goToVideoFormatConverter()}
         >
           <Card.Meta title="Video Format Converter" description="Convert your video file to another format" />
@@ -42,12 +37,7 @@ const Home = () => {
         <Card
           hoverable
           style={{width: 240}}
-          cover={
-            <img
-              alt="video compress"
-              src="https://image.shutterstock.com/image-vector/video-compressing-icon-shows-cube-260nw-1017168082.jpg"
-            />
-          }
+          cover={<img alt="video compress" src="assets/images/video_compress.svg" />}
           onClick={() => goToVideoCompress()}
         >
           <Card.Meta title="Video Compress" description="Reduce the size of your video in a simple way." />
@@ -62,13 +52,7 @@ const Home = () => {
           hoverable
           bordered={false}
           style={{width: 240, backgroundColor: 'rgb(240 242 245)'}}
-          cover={
-            <img
-              alt="free and unlimited"
-              src="https://www.flaticon.com/svg/vstatic/svg/726/726459.svg?token=exp=1617660455~hmac=7d73c18d2c9861c91ffd8baa1096de31"
-              height={100}
-            />
-          }
+          cover={<img alt="free and unlimited" src="assets/images/free.svg" height={100} />}
         >
           <Card.Meta
             title="Free and Unlimited"
@@ -79,13 +63,7 @@ const Home = () => {
           hoverable
           bordered={false}
           style={{width: 240, backgroundColor: 'rgb(240 242 245)'}}
-          cover={
-            <img
-              alt="online tools"
-              src="https://www.flaticon.com/svg/vstatic/svg/431/431979.svg?token=exp=1617660608~hmac=23270dc1ad69c2f749d378bad81bed34"
-              height={100}
-            />
-          }
+          cover={<img alt="online tools" src="assets/images/online.svg" height={100} />}
         >
           <Card.Meta
             title="Online tools"
@@ -96,13 +74,7 @@ const Home = () => {
           hoverable
           bordered={false}
           style={{width: 240, backgroundColor: 'rgb(240 242 245)'}}
-          cover={
-            <img
-              alt="secure tools"
-              src="https://www.flaticon.com/svg/vstatic/svg/95/95454.svg?token=exp=1617660667~hmac=4012ceed143d556c076a30b2f5eda1b5"
-              height={100}
-            />
-          }
+          cover={<img alt="secure tools" src="assets/images/secure.svg" height={100} />}
         >
           <Card.Meta
             title="Secure and Private"
@@ -113,13 +85,7 @@ const Home = () => {
           hoverable
           bordered={false}
           style={{width: 240, backgroundColor: 'rgb(240 242 245)'}}
-          cover={
-            <img
-              alt="No file size limitations"
-              src="https://www.flaticon.com/svg/vstatic/svg/1504/1504941.svg?token=exp=1617660718~hmac=badecddbf32e88629818d063cb674d87"
-              height={100}
-            />
-          }
+          cover={<img alt="No file size limitations" src="assets/images/file_size.svg" height={100} />}
         >
           <Card.Meta
             title="No file size limitations"

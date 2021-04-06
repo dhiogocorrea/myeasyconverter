@@ -77,11 +77,7 @@ const VideoCompress = () => {
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
       <Space direction="vertical" align="center">
-        <img
-          width="150px"
-          alt="video compress"
-          src="https://image.shutterstock.com/image-vector/video-compressing-icon-shows-cube-260nw-1017168082.jpg"
-        />
+        <img width="150px" alt="video compress" src="assets/images/video_compress.svg" />
         <Title level={1}>Video Compress</Title>
         <Title level={4}>Reduce the size of your video in a simple way.</Title>
       </Space>

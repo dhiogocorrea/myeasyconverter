@@ -79,11 +79,7 @@ const VideoFormatConvert = () => {
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
       <Space direction="vertical" align="center">
-        <img
-          width="150px"
-          alt="video format convert"
-          src="https://cdn2.vectorstock.com/i/1000x1000/40/91/video-conversion-icon-vector-21024091.jpg"
-        />
+        <img width="150px" alt="video format convert" src="assets/images/video_convert.svg" />
         <Title level={1}>Video Format Converter</Title>
         <Title level={4}>Convert your video file to another format.</Title>
       </Space>

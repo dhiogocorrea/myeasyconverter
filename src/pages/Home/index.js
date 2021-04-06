@@ -14,6 +14,11 @@ const Home = () => {
   const goToVideoFormatConverter = () => {
     history.push('/video-format-converter');
   };
+
+  const goToVideoTrim = () => {
+    history.push('/video-trimmer');
+  };
+
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
       <Space direction="vertical" align="center">
@@ -32,7 +37,6 @@ const Home = () => {
         >
           <Card.Meta title="Video Format Converter" description="Convert your video file to another format" />
         </Card>
-        <Divider type="vertical" />
         <Card
           hoverable
           style={{width: 240}}
@@ -40,6 +44,14 @@ const Home = () => {
           onClick={() => goToVideoCompress()}
         >
           <Card.Meta title="Video Compress" description="Reduce the size of your video in a simple way." />
+        </Card>
+        <Card
+          hoverable
+          style={{width: 240}}
+          cover={<img alt="video trim" src="assets/images/video_crop.svg" />}
+          onClick={() => goToVideoTrim()}
+        >
+          <Card.Meta title="Video Trimmer" description="Trim your video file to another format" />
         </Card>
       </Row>
       <Divider />

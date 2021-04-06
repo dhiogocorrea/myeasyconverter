@@ -37,6 +37,8 @@ export const AboutSection = params => {
         <Typography.Link href="/video-format-converter">Video Format Converter</Typography.Link>
         <Typography.Text>&nbsp;/&nbsp;</Typography.Text>
         <Typography.Link href="/video-compress">Video Compress</Typography.Link>
+        <Typography.Text>&nbsp;/&nbsp;</Typography.Text>
+        <Typography.Link href="/video-trimmer">Video Trimmer</Typography.Link>
       </Row>
     </div>
   );

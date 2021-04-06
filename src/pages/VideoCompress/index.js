@@ -64,7 +64,7 @@ const VideoCompress = () => {
 
       ffmpeg.FS('writeFile', name, await fetchFile(file));
       await ffmpeg.run('-i', name, '-vf', 'scale=iw/2:ih/2', 'output.' + extension);
-      const data = ffmpeg.FS('readFile', 'output.mp4');
+      const data = ffmpeg.FS('readFile', 'output.' + extension);
 
       setVideoSrc(URL.createObjectURL(new Blob([data.buffer], {type: 'video/' + extension})));
     } finally {

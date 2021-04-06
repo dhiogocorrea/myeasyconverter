@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Home from './pages/Home/index';
 import VideoCompress from './pages/VideoCompress';
-import VideoTrim from './pages/VideoTrim';
+import VideoCut from './pages/VideoCut';
 import VideoFormatConvert from './pages/VideoFormatConvert';
 
 const ROUTES = [
@@ -16,11 +16,11 @@ const ROUTES = [
     component: () => <VideoFormatConvert />,
   },
   {
-    path: '/video-trimmer',
-    key: 'VIDEO_TRIM',
+    path: '/video-cut',
+    key: 'VIDEO_CUT',
     needsAuth: false,
     exact: true,
-    component: () => <VideoTrim />,
+    component: () => <VideoCut />,
   },
 ];
 

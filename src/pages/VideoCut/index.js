@@ -8,7 +8,7 @@ import {MaskedInput} from 'antd-mask-input';
 
 const {Dragger} = Upload;
 
-const VideoTrim = () => {
+const VideoCut = () => {
   const [ffmpegLoaded, setFfmpegLoaded] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [videoSrc, setVideoSrc] = useState(null);
@@ -93,7 +93,7 @@ const VideoTrim = () => {
 
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
-      <TitleSection title="Video Trimmer" subtitle="Trim your video file." img="assets/images/video_crop.svg" />
+      <TitleSection title="Video Cut" subtitle="Cut your video file." img="assets/images/video_cut.svg" />
       <Divider />
       <Spin spinning={isProcessing} tip={spinMessage}>
         <Dragger customRequest={dummyRequest} {...props}>
@@ -126,7 +126,7 @@ const VideoTrim = () => {
         </Row>
       )}
       <Button disabled={fileObj === null || isProcessing === true} onClick={() => processFFMPEG(fileObj)}>
-        Trim now!
+        Cut now!
       </Button>
       <MyConsole showLog={isProcessing === true} />
       {videoSrcResult !== null && (
@@ -139,13 +139,13 @@ const VideoTrim = () => {
       )}
       <Divider />
       <AboutSection
-        title="Video Trimmer"
-        description="Video trimmer is a tool to fastly trim videos in any format. Just add the video, set the start and end time, and that's it! There is no file size or time limitation."
+        title="Video Cut"
+        description="Video cut is a tool to fastly cut videos in any format. Just add the video, set the start and end time, and that's it! There is no file size or time limitation."
         steps={[
           {
             title: '1. Upload a file',
             description:
-              'Choose the video from your computer that you and to trim. You can drag and drop it in the white zone with the blue icon, or click on the blue zone and choose it.',
+              'Choose the video from your computer that you and to cut. You can drag and drop it in the white zone with the blue icon, or click on the blue zone and choose it.',
           },
           {
             title: '2. Choose the start and end time',
@@ -153,9 +153,9 @@ const VideoTrim = () => {
               'Inform the start and end time in the given fields. The format must be HH:mm:ss (hours minutes seconds).',
           },
           {
-            title: '3. Trim Now!',
+            title: '3. Cut Now!',
             description:
-              'Click on "Trim Now" button and wait for the proccess to be done. You can the proccess by looking the logs on the black box that will appear on the screen.',
+              'Click on "Cut Now" button and wait for the proccess to be done. You can the proccess by looking the logs on the black box that will appear on the screen.',
           },
           {
             title: '4. Download result',
@@ -168,4 +168,4 @@ const VideoTrim = () => {
   );
 };
 
-export default VideoTrim;
+export default VideoCut;

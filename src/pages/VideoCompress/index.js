@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {Divider, Space, Typography, Upload, message, Spin, Button} from 'antd';
+import {Divider, Space, Upload, message, Spin, Button} from 'antd';
 import {InboxOutlined, DownloadOutlined} from '@ant-design/icons';
 import {createFFmpeg, fetchFile} from '@ffmpeg/ffmpeg';
 import MyConsole from '../../components/MyConsole';
-import AboutSection from '../../components/AboutSection';
+import {TitleSection, AboutSection} from '../../components/Sections';
 
-const {Title} = Typography;
 const {Dragger} = Upload;
 
 const VideoCompress = () => {
@@ -76,11 +75,11 @@ const VideoCompress = () => {
 
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
-      <Space direction="vertical" align="center">
-        <img width="150px" alt="video compress" src="assets/images/video_compress.svg" />
-        <Title level={1}>Video Compress</Title>
-        <Title level={4}>Reduce the size of your video in a simple way.</Title>
-      </Space>
+      <TitleSection
+        title="Video Compress"
+        subtitle="Reduce the size of your video in a simple way."
+        img="assets/images/video_compress.svg"
+      />
       <Divider />
       <Spin spinning={isProcessing} tip={spinMessage}>
         <Dragger customRequest={dummyRequest} {...props}>

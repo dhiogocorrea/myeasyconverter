@@ -3,9 +3,8 @@ import {Divider, Space, Typography, Upload, message, Spin, Button, Select} from 
 import {InboxOutlined, DownloadOutlined} from '@ant-design/icons';
 import {createFFmpeg, fetchFile} from '@ffmpeg/ffmpeg';
 import MyConsole from '../../components/MyConsole';
-import AboutSection from '../../components/AboutSection';
+import {TitleSection, AboutSection} from '../../components/Sections';
 
-const {Title} = Typography;
 const {Dragger} = Upload;
 
 const VideoFormatConvert = () => {
@@ -78,11 +77,11 @@ const VideoFormatConvert = () => {
 
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
-      <Space direction="vertical" align="center">
-        <img width="150px" alt="video format convert" src="assets/images/video_convert.svg" />
-        <Title level={1}>Video Format Converter</Title>
-        <Title level={4}>Convert your video file to another format.</Title>
-      </Space>
+      <TitleSection
+        title="Video Format Converter"
+        subtitle="Convert your video file to another format."
+        img="assets/images/video_convert.svg"
+      />
       <Divider />
       <Spin spinning={isProcessing} tip={spinMessage}>
         <Dragger customRequest={dummyRequest} {...props}>

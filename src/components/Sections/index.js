@@ -1,7 +1,16 @@
 import React from 'react';
-import {Card, Typography, Row, Divider} from 'antd';
+import {Card, Typography, Row, Space, Divider} from 'antd';
 
-const AboutSection = params => {
+export const TitleSection = params => {
+  return (
+    <Space direction="vertical" align="center">
+      <img width="150px" alt="video compress" src={params.img} />
+      <Typography.Title level={1}>{params.title}</Typography.Title>
+      <Typography.Title level={2}>{params.subtitle}</Typography.Title>
+    </Space>
+  );
+};
+export const AboutSection = params => {
   return (
     <div>
       <Row direction="vertical" align="center" style={{marginBottom: 20}}>
@@ -32,5 +41,3 @@ const AboutSection = params => {
     </div>
   );
 };
-
-export default AboutSection;

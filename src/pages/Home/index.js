@@ -17,11 +17,10 @@ const Home = () => {
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
       <Space direction="vertical" align="center">
-        <Title level={1} style={{color: 'red'}}>
-          My Easy Converter
+        <Title level={1} mark>
+          Convert ○ Compress ○ Transform
         </Title>
-
-        <Title level={4}>Several tools to make your online day easier.</Title>
+        <Title level={2}>Video and Audio files for free and unlimited.</Title>
       </Space>
       <Divider />
       <Row direction="vertical" align="center">

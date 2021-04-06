@@ -148,7 +148,7 @@ const VideoCut = () => {
               'Choose the video from your computer that you and to cut. You can drag and drop it in the white zone with the blue icon, or click on the blue zone and choose it.',
           },
           {
-            title: '2. Choose the start and end time',
+            title: '2. Start and End time',
             description:
               'Inform the start and end time in the given fields. The format must be HH:mm:ss (hours minutes seconds).',
           },

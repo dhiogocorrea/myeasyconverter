@@ -106,9 +106,9 @@ const Home = () => {
           your hardware resources. By doing that, we guarantee the security and privacy of your data.
         </Typography.Paragraph>
         <Typography.Paragraph>
-          We are adding more and more resources with time. Be free to reach me on Linkedin if you have any suggestions{' '}
+          We are adding more and more resources with time. If you have any suggestions, feel free to{' '}
           <Typography.Link href="https://www.linkedin.com/in/dhiogocorrea/" target="_blank">
-            here
+            reach me on Linkedin page
           </Typography.Link>.
         </Typography.Paragraph>
       </Row>

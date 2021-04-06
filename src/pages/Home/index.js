@@ -11,8 +11,8 @@ const Home = () => {
     history.push('/video-compress');
   };
 
-  const goToVideoFormatConverter = () => {
-    history.push('/video-format-converter');
+  const goToVideoConvert = () => {
+    history.push('/video-convert');
   };
 
   const goToVideoCut = () => {
@@ -32,10 +32,10 @@ const Home = () => {
         <Card
           hoverable
           style={{width: 240}}
-          cover={<img alt="video format convert" src="assets/images/video_convert.svg" />}
-          onClick={() => goToVideoFormatConverter()}
+          cover={<img alt="video convert" src="assets/images/video_convert.svg" />}
+          onClick={() => goToVideoConvert()}
         >
-          <Card.Meta title="Video Format Converter" description="Convert your video file to another format." />
+          <Card.Meta title="Video Convert" description="Convert your video file to another format." />
         </Card>
         <Card
           hoverable

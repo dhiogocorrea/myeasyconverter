@@ -9,8 +9,8 @@ const ROUTES = [
   {path: '/', key: 'ROOT', needsAuth: false, exact: true, component: () => <Home />},
   {path: '/video-compress', key: 'VIDEO_COMPRESS', needsAuth: false, exact: true, component: () => <VideoCompress />},
   {
-    path: '/video-format-converter',
-    key: 'VIDEO_FORMAT_CONVERT',
+    path: '/video-convert',
+    key: 'VIDEO_CONVERT',
     needsAuth: false,
     exact: true,
     component: () => <VideoFormatConvert />,

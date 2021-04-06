@@ -34,7 +34,7 @@ export const AboutSection = params => {
         <Typography.Title level={4}>Check out all our available tools</Typography.Title>
       </Row>
       <Row direction="horizontal" align="center" style={{marginBottom: 20}}>
-        <Typography.Link href="/video-format-converter">Video Format Converter</Typography.Link>
+        <Typography.Link href="/video-convert">Video Convert</Typography.Link>
         <Typography.Text>&nbsp;/&nbsp;</Typography.Text>
         <Typography.Link href="/video-compress">Video Compress</Typography.Link>
         <Typography.Text>&nbsp;/&nbsp;</Typography.Text>

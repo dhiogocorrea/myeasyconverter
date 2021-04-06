@@ -78,7 +78,7 @@ const VideoFormatConvert = () => {
   return (
     <div style={{margin: 20, textAlign: 'center'}}>
       <TitleSection
-        title="Video Format Converter"
+        title="Video Convert"
         subtitle="Convert your video file to another format."
         img="assets/images/video_convert.svg"
       />

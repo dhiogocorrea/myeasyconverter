@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Typography, Row} from 'antd';
+import {Card, Typography, Row, Divider} from 'antd';
 
 const AboutSection = params => {
   return (
@@ -19,6 +19,15 @@ const AboutSection = params => {
             <Card.Meta title={step.title} description={step.description} />
           </Card>
         ))}
+      </Row>
+      <Divider />
+      <Row direction="vertical" align="center" style={{marginBottom: 20}}>
+        <Typography.Title level={4}>Check out all our available tools</Typography.Title>
+      </Row>
+      <Row direction="horizontal" align="center" style={{marginBottom: 20}}>
+        <Typography.Link href="/video-format-converter">Video Format Converter</Typography.Link>
+        <Typography.Text>&nbsp;/&nbsp;</Typography.Text>
+        <Typography.Link href="/video-compress">Video Compress</Typography.Link>
       </Row>
     </div>
   );

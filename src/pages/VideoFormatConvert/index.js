@@ -3,6 +3,7 @@ import {Divider, Space, Typography, Upload, message, Spin, Button, Select} from 
 import {InboxOutlined, DownloadOutlined} from '@ant-design/icons';
 import {createFFmpeg, fetchFile} from '@ffmpeg/ffmpeg';
 import MyConsole from '../../components/MyConsole';
+import AboutSection from '../../components/AboutSection';
 
 const {Title} = Typography;
 const {Dragger} = Upload;
@@ -119,8 +120,11 @@ const VideoFormatConvert = () => {
       <Button disabled={fileObj === null || isProcessing === true} onClick={() => processFFMPEG(fileObj)}>
         Convert now!
       </Button>
-      <Divider />
+
       <MyConsole showLog={isProcessing === true} />
+      <Typography.Paragraph>
+        If the resulted video download comes without extension, just rename it adding the extension.
+      </Typography.Paragraph>
       <Space direction="vertical" align="center">
         {videoSrc !== null && (
           <Button type="primary" size="large" icon={<DownloadOutlined />} href={videoSrc} download>
@@ -128,9 +132,36 @@ const VideoFormatConvert = () => {
           </Button>
         )}
         <video id="player" controls hidden={true} />
-        <p>Video format converter is a tool to fastly change the format of your videos in a very fast and easy way.</p>
-        <p>If the video download comes without extension, just rename it adding the extension.</p>
       </Space>
+      <Divider />
+      <AboutSection
+        title="Video Format Converter"
+        description="Video format converter is a tool to fastly change the format of your videos in a very fast and easy way. We
+          support several types of files: mp4, avi, mkv, mov, ogg, wmv, flv, webm and ogv. You can choose whatever video
+          file you want, and convert it. There is no file size or time limitation."
+        steps={[
+          {
+            title: '1. Upload a file',
+            description:
+              'Choose the video from your computer that you and to convert. You can drag and drop it in the white zone with the blue icon, or click on the blue zone and choose it.',
+          },
+          {
+            title: '2. Choose the format',
+            description:
+              'Click on the select box and choose the desired format that you want your video to be converted.',
+          },
+          {
+            title: '3. Convert Now!',
+            description:
+              'Click on "Convert Now" button and wait for the proccess to be done. You can the proccess by looking the logs on the black box that will appear on the screen.',
+          },
+          {
+            title: '4. Download result',
+            description:
+              'After the proccess completed, click on "Download result" button and it\'s done! If the file is downloaded without format, just  rename it by adding the extension at the end (ex: .avi).',
+          },
+        ]}
+      />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import {Divider, Space, Typography, Upload, message, Spin, Button} from 'antd';
 import {InboxOutlined, DownloadOutlined} from '@ant-design/icons';
 import {createFFmpeg, fetchFile} from '@ffmpeg/ffmpeg';
 import MyConsole from '../../components/MyConsole';
+import AboutSection from '../../components/AboutSection';
 
 const {Title} = Typography;
 const {Dragger} = Upload;
@@ -105,11 +106,29 @@ const VideoCompress = () => {
           </Button>
         )}
         <video id="player" controls hidden={isProcessing === true || videoSrc === null} />
-        <p>
-          Video compress is a tool to reduce the size of your videos, suitable to be executed in mobile devices without
-          losing so much quality.
-        </p>
       </Space>
+      <Divider />
+      <AboutSection
+        title="Video Compress"
+        description="Video Compress is a tool to reduce the size of your videos, suitable to be executed in mobile devices without losing so much quality. It can reduce around 60% of your file size, depending on the case! You can use it with any video formats: mp4, avi, webm, mov and others."
+        steps={[
+          {
+            title: '1. Upload a file',
+            description:
+              'Choose the video from your computer that you and to compress. You can drag and drop it in the white zone with the blue icon, or click on the blue zone and choose it.',
+          },
+          {
+            title: '2. Processing',
+            description:
+              'After the upload of the video file, the compressing process will start immediatly. You can the proccess by looking the logs on the black box that will appear on the screen.',
+          },
+          {
+            title: '3. Download result',
+            description:
+              'After the proccess completed, click on "Download result" button and it\'s done! You can also check a preview from the video on our site before you download it.',
+          },
+        ]}
+      />
     </div>
   );
 };

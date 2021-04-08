@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
+import BlogFfmpeg from './pages/Blog/ffmpeg';
 import Home from './pages/Home/index';
 import VideoCompress from './pages/VideoCompress';
 import VideoCut from './pages/VideoCut';
@@ -21,6 +22,13 @@ const ROUTES = [
     needsAuth: false,
     exact: true,
     component: () => <VideoCut />,
+  },
+  {
+    path: '/blog/ffmpeg',
+    key: 'BLOG_FFMPEG',
+    needsAuth: false,
+    exact: true,
+    component: () => <BlogFfmpeg />,
   },
 ];
 

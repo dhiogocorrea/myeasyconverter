@@ -1,5 +1,6 @@
 import React from 'react';
 import {Space, Typography, Divider, Row, Card} from 'antd';
+import {RandomPosts} from '../../components/BlogPost/index';
 import {useHistory} from 'react-router-dom';
 
 const {Title} = Typography;
@@ -122,6 +123,13 @@ const Home = () => {
             reach me on Linkedin page
           </Typography.Link>.
         </Typography.Paragraph>
+      </Row>
+      <Divider />
+      <Row direction="vertical" align="center">
+        <Typography.Title level={3}>Content that might interest you</Typography.Title>
+      </Row>
+      <Row direction="vertical" align="center">
+        <RandomPosts />
       </Row>
     </div>
   );

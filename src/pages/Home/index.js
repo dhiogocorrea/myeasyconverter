@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Space, Typography, Divider, Row, Card} from 'antd';
 import {RandomPosts} from '../../components/BlogPost/index';
 import {useHistory} from 'react-router-dom';
@@ -8,18 +8,18 @@ const {Title} = Typography;
 const Home = () => {
   const history = useHistory();
 
-  // useEffect(() => {
-  //   document.getElementById('ad').innerHTML = `<script type="text/javascript">
-  //   atOptions = {
-  //     'key' : '200eb45975b8222f2f09e17163e05efd',
-  //     'format' : 'iframe',
-  //     'height' : 50,
-  //     'width' : 320,
-  //     'params' : {}
-  //   };
-  //   document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.creativedisplayformat.com/200eb45975b8222f2f09e17163e05efd/invoke.js"></scr' + 'ipt>');
-  // </script>`;
-  // }, []);
+  useEffect(() => {
+    document.getElementById('ad').innerHTML = `<script type="text/javascript">
+    atOptions = {
+      'key' : '200eb45975b8222f2f09e17163e05efd',
+      'format' : 'iframe',
+      'height' : 50,
+      'width' : 320,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.creativedisplayformat.com/200eb45975b8222f2f09e17163e05efd/invoke.js"></scr' + 'ipt>');
+  </script>`;
+  }, []);
 
   const goToVideoCompress = () => {
     history.push('/video-compress');
@@ -47,6 +47,7 @@ const Home = () => {
         data-cfasync="false"
         src="//pl16216547.highperformancecpmnetwork.com/1aad8dbae3d99346ed9fd84fcd44f2c2/invoke.js"
       />
+      <div id="ad" />
       <div id="container-1aad8dbae3d99346ed9fd84fcd44f2c2" />
       <Divider />
       <Row direction="vertical" align="center">

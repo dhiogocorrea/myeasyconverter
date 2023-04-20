@@ -1,4 +1,5 @@
 import { Space, Row, Col, Image, Divider, Typography, Card } from "antd";
+import allPosts from "../../blogPosts/blogPosts";
 
 const BlogHeader = (params) => {
   return (
@@ -37,8 +38,19 @@ const BlogPost = (params) => {
         align='center'
         style={{ marginTop: 20, paddingLeft: 50, paddingRight: 50 }}
       >
-        {params.body.map((paragraph, indx) => (
-          <Typography.Paragraph key={indx}>{paragraph}</Typography.Paragraph>
+        {params.body.map((section, indx) => (
+          <Row justify='center' key={indx}>
+            <Col span={18}>
+              <Typography.Title>{section.title}</Typography.Title>
+              <Divider />
+
+              {section.body.map((paragraph, indx2) => (
+                <Typography.Paragraph key={indx2}>
+                  {paragraph}
+                </Typography.Paragraph>
+              ))}
+            </Col>
+          </Row>
         ))}
       </Row>
       {params.callToAction && (
@@ -52,41 +64,26 @@ const BlogPost = (params) => {
 };
 
 export const RandomPosts = () => {
-  const allPosts = [
-    {
-      alt_image: "ffmpeg",
-      image: "assets/images/ffmpeg.jpeg",
-      location: "ffmpeg",
-      title: "How FFMPeg Works?",
-      description: "A brief summary of why we use ffmpeg",
-    },
-    {
-      alt_image: "video-convert-seo",
-      image:
-        "assets/images/video-converter-color-icon-vector-illustration.webp",
-      location: "video-convert-seo",
-      title: "Video Compressing and SEO",
-      description: "How Compressed Videos Can Improve Your Website's Ranking",
-    },
-  ];
-
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Row gutter={[8, 8]}>
-        {allPosts.map((post, indx) => (
+        {Object.keys(allPosts).map((postName, indx) => (
           <Col xs={24} sm={12} md={8} lg={6} key={indx}>
             <Card
               hoverable
               cover={
                 <img
-                  alt={post.alt_image}
-                  src={post.image}
+                  alt={allPosts[postName].alt_image}
+                  src={allPosts[postName].image}
                   style={{ width: "100%", height: 350, objectFit: "contain" }}
                 />
               }
-              onClick={() => (window.location = "/blog/" + post.location)}
+              onClick={() => (window.location = "/blog/" + postName)}
             >
-              <Card.Meta title={post.title} description={post.description} />
+              <Card.Meta
+                title={allPosts[postName].title}
+                description={allPosts[postName].description}
+              />
             </Card>
           </Col>
         ))}

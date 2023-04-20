@@ -165,7 +165,7 @@ const Home = () => {
             href='https://www.linkedin.com/in/dhiogocorrea/'
             target='_blank'
           >
-            reach me on Linkedin page
+            reach me on Linkedin
           </Typography.Link>
           .
         </Typography.Paragraph>

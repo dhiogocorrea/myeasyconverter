@@ -1,15 +1,24 @@
 import { useParams } from "react-router-dom";
-import BlogFfmpeg from "./ffmpeg";
-import BlogVideoCompressing from "./video-compress-seo";
+import BlogPost from "../../components/BlogPost";
+import { AllTools } from "../../components/Sections";
+import allPosts from "../../blogPosts/blogPosts";
 
-const MainBlogPage = (props) => {
+const MainBlogPage = () => {
   const { page } = useParams();
 
   return (
-    <>
-      {page === "ffmpeg" && <BlogFfmpeg />}
-      {page === "video-convert-seo" && <BlogVideoCompressing />}
-    </>
+    <div>
+      {page && allPosts[page] && (
+        <BlogPost
+          img={"/" + allPosts[page].image}
+          title={allPosts[page].title}
+          subtitle={allPosts[page].subtitle}
+          body={allPosts[page].paragraphs}
+          callToAction={allPosts[page].callToAction}
+        />
+      )}
+      <AllTools />
+    </div>
   );
 };
 

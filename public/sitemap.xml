@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://www.myeasyconverter.com/video-format-converter</loc>
-<lastmod>2020-04-04</lastmod>
-</url>
-<url>
-<loc>http://www.myeasyconverter.com/video-compress</loc>
-<lastmod>2020-04-04</lastmod>
-</url>
-<url>
-<loc>http://www.myeasyconverter.com/video-cut</loc>
-<lastmod>2020-04-06</lastmod>
-</url>
-<loc>http://www.myeasyconverter.com/blog/ffmpeg</loc>
-<lastmod>2020-04-08</lastmod>
-</url>
+    <url>
+        <loc>http://www.myeasyconverter.com/video-format-converter</loc>
+        <lastmod>2020-04-04</lastmod>
+    </url>
+    <url>
+        <loc>http://www.myeasyconverter.com/video-compress</loc>
+        <lastmod>2020-04-04</lastmod>
+    </url>
+    <url>
+        <loc>http://www.myeasyconverter.com/video-cut</loc>
+        <lastmod>2020-04-06</lastmod>
+    </url>
+    <loc>http://www.myeasyconverter.com/blog</loc>
+    <lastmod>2020-04-08</lastmod>
+    </url>
 </urlset>

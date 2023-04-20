@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Space, Typography, Divider, Row, Card } from "antd";
 import { RandomPosts } from "../../components/BlogPost/index";
 import { useHistory } from "react-router-dom";
@@ -23,18 +23,20 @@ const Home = () => {
   return (
     <div style={{ margin: 20, textAlign: "center" }}>
       <Space direction='vertical' align='center'>
-        <Title level={1} mark>
-          Convert ○ Compress ○ Transform
-        </Title>
+        <Title level={1}>Convert ○ Compress ○ Transform</Title>
         <Title level={2}>Video and Audio files for free and unlimited.</Title>
       </Space>
       <Divider />
       <Row direction='vertical' align='center'>
         <Card
           hoverable
-          style={{ width: 240 }}
+          style={{ width: 240, height: 380 }}
           cover={
-            <img alt='video convert' src='assets/images/video_convert.svg' />
+            <img
+              alt='video convert'
+              src='assets/images/video_convert.svg'
+              style={{ width: 240, height: 240 }}
+            />
           }
           onClick={() => goToVideoConvert()}
         >
@@ -45,9 +47,13 @@ const Home = () => {
         </Card>
         <Card
           hoverable
-          style={{ width: 240 }}
+          style={{ width: 240, height: 380 }}
           cover={
-            <img alt='video compress' src='assets/images/video_compress.svg' />
+            <img
+              alt='video compress'
+              src='assets/images/video_compress.svg'
+              style={{ width: 240, height: 240 }}
+            />
           }
           onClick={() => goToVideoCompress()}
         >
@@ -58,8 +64,14 @@ const Home = () => {
         </Card>
         <Card
           hoverable
-          style={{ width: 240 }}
-          cover={<img alt='video cut' src='assets/images/video_cut.svg' />}
+          style={{ width: 240, height: 380 }}
+          cover={
+            <img
+              alt='video cut'
+              src='assets/images/video_cut.svg'
+              style={{ width: 240, height: 240 }}
+            />
+          }
           onClick={() => goToVideoCut()}
         >
           <Card.Meta

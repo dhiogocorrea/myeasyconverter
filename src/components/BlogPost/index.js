@@ -75,9 +75,24 @@ export const RandomPosts = () => {
                 <img
                   alt={allPosts[postName].alt_image}
                   src={allPosts[postName].image}
-                  style={{ width: "100%", height: 350, objectFit: "contain" }}
+                  style={{
+                    width: 220,
+                    height: 240,
+                    objectFit: "contain",
+                    justifyContent: "center",
+                    alignContent: "center",
+                    alignItems: "center",
+                    marginLeft: 30,
+                  }}
                 />
               }
+              style={{
+                width: 280,
+                height: 380,
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+              }}
               onClick={() => (window.location = "/blog/" + postName)}
             >
               <Card.Meta

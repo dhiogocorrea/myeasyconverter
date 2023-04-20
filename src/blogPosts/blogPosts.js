@@ -9,7 +9,7 @@ import {
 const allPosts = {
   whyMyEasyConverter: {
     alt_image: "whyMyEasyConverter",
-    image: "assets/images/whyMyEasyConverter.jpg",
+    image: "/assets/images/whyMyEasyConverter.jpg",
     title: "Why to use MyEasyConverter?",
     description: "The power of audio and video transformation in your hands",
     paragraphs: whyMyEasyConverterParagraph,
@@ -17,7 +17,7 @@ const allPosts = {
   },
   ffmpeg: {
     alt_image: "ffmpeg",
-    image: "assets/images/ffmpeg.jpeg",
+    image: "/assets/images/ffmpeg.jpeg",
     title: "How FFMPeg Works?",
     description: "A brief summary of why we use ffmpeg",
     paragraphs: ffmpegParagraphs,
@@ -25,7 +25,7 @@ const allPosts = {
   },
   videoConvertSeo: {
     alt_image: "video-convert-seo",
-    image: "assets/images/video-converter-color-icon-vector-illustration.webp",
+    image: "/assets/images/video-converter-color-icon-vector-illustration.jpg",
     title: "Video Compressing and SEO",
     description: "How Compressed Videos Can Improve Your Website's Ranking",
     paragraphs: videoConvertSeoParagraphs,
@@ -33,7 +33,7 @@ const allPosts = {
   },
   dataProtection: {
     alt_image: "data-protection",
-    image: "assets/images/data-protection.jpg",
+    image: "/assets/images/data-protection.jpg",
     title: "Importance of data protection",
     description: "Why do  you have to care about your data",
     paragraphs: dataProtectionParagraphs,

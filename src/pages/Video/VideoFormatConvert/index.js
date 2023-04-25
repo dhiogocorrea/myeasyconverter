@@ -11,8 +11,8 @@ import {
 } from "antd";
 import { InboxOutlined, DownloadOutlined } from "@ant-design/icons";
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
-import MyConsole from "../../components/MyConsole";
-import { TitleSection, AboutSection } from "../../components/Sections";
+import MyConsole from "../../../components/MyConsole";
+import { TitleSection, AboutSection } from "../../../components/Sections";
 
 const { Dragger } = Upload;
 

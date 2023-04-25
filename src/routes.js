@@ -1,9 +1,11 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/index";
-import VideoCompress from "./pages/VideoCompress";
-import VideoCut from "./pages/VideoCut";
-import VideoFormatConvert from "./pages/VideoFormatConvert";
+import VideoCompress from "./pages/Video/VideoCompress";
+import VideoCut from "./pages/Video/VideoCut";
+import VideoFormatConvert from "./pages/Video/VideoFormatConvert";
+import M3u8Downloader from "./pages/Video/M3u8Downloader";
+
 import MainBlogPage from "./pages/Blog";
 
 const ROUTES = [
@@ -36,7 +38,14 @@ const ROUTES = [
     component: () => <VideoCut />,
   },
   {
-    path: "/blog/:page",
+    path: "/m3u8-downloader",
+    key: "M3U8_DOWNLOADER",
+    needsAuth: false,
+    exact: true,
+    component: () => <M3u8Downloader />,
+  },
+  {
+    path: "/blog/:page?",
     key: "BLOG_MAIN",
     needsAuth: false,
     exact: true,

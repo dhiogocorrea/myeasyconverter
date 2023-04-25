@@ -20,6 +20,10 @@ const Home = () => {
     history.push("/video-cut");
   };
 
+  const goToM3U8Downloader = () => {
+    history.push("/m3u8-downloader");
+  };
+
   return (
     <div style={{ margin: 20, textAlign: "center" }}>
       <Space direction='vertical' align='center'>
@@ -35,7 +39,7 @@ const Home = () => {
             <img
               alt='video convert'
               src='assets/images/video_convert.svg'
-              style={{ width: 240, height: 240 }}
+              style={{ width: 240, height: 240, marginTop: 10 }}
             />
           }
           onClick={() => goToVideoConvert()}
@@ -52,7 +56,7 @@ const Home = () => {
             <img
               alt='video compress'
               src='assets/images/video_compress.svg'
-              style={{ width: 240, height: 240 }}
+              style={{ width: 240, height: 240, marginTop: 10 }}
             />
           }
           onClick={() => goToVideoCompress()}
@@ -69,7 +73,7 @@ const Home = () => {
             <img
               alt='video cut'
               src='assets/images/video_cut.svg'
-              style={{ width: 240, height: 240 }}
+              style={{ width: 240, height: 240, marginTop: 10 }}
             />
           }
           onClick={() => goToVideoCut()}
@@ -77,6 +81,23 @@ const Home = () => {
           <Card.Meta
             title='Video Cut'
             description='Cut your video file in a few steps.'
+          />
+        </Card>
+        <Card
+          hoverable
+          style={{ width: 240, height: 380 }}
+          cover={
+            <img
+              alt='m3u8 downloader'
+              src='assets/images/m3u.svg'
+              style={{ width: 240, height: 240, marginTop: 10 }}
+            />
+          }
+          onClick={() => goToM3U8Downloader()}
+        >
+          <Card.Meta
+            title='M3u8 Downloader'
+            description='Download m3u8 files via url to mp4.'
           />
         </Card>
       </Row>

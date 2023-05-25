@@ -5,7 +5,8 @@ import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 import MyConsole from "../../../components/MyConsole";
 import { TitleSection, AboutSection } from "../../../components/Sections";
 
-import "@vime/core/themes/default.css";
+import { fs } from "memfs";
+
 import axios from "axios";
 
 const M3u8Downloader = () => {
@@ -15,15 +16,30 @@ const M3u8Downloader = () => {
   const [spinMessage, setSpinMessage] = useState("");
   const [m3u8linkUrl, setM3u8linkUrl] = useState("myM3u8link.com.br");
 
+  var path = require("path");
+
   useEffect(() => {
     if (videoSrc !== null) {
       const video = document.getElementById("player");
       video.src = videoSrc;
     }
   }, [videoSrc]);
+
   const ffmpeg = createFFmpeg({
     log: true,
   });
+
+  const parseFilename = (line) => {
+    return line;
+  };
+
+  const writeFileRecursive = (file, data) => {
+    const dirname = path.dirname(file);
+    if (!fs.existsSync(dirname)) {
+      fs.mkdirSync(dirname, { recursive: true });
+    }
+    fs.writeFileSync(file, data);
+  };
 
   const explorM3u8Url = async (url, baseUrl) => {
     await axios.get(url).then(async (response) => {
@@ -34,15 +50,48 @@ const M3u8Downloader = () => {
           const file = await fetchFile(
             line.startsWith("http") ? line.trim() : baseUrl + "/" + line.trim()
           );
-          ffmpeg.FS("writeFile", line, file);
 
-          if (line.trim().endsWith("m3u8")) {
-            await explorM3u8Url(
+          writeFileRecursive(parseFilename(line), file);
+
+          //ffmpeg.FS("writeFile", parseFilename(line), file);
+
+          if (line.trim().includes(".m3u8")) {
+            if (line.includes("/")) {
+              let newBaseUrl = baseUrl + "/" + line.split("/")[0];
+
+              await explorM3u8Url(
+                line.startsWith("http")
+                  ? line.trim()
+                  : baseUrl + "/" + line.trim(),
+                newBaseUrl
+              );
+            } else {
+              await explorM3u8Url(
+                line.startsWith("http")
+                  ? line.trim()
+                  : baseUrl + "/" + line.trim(),
+                baseUrl
+              );
+            }
+          }
+        } else if (line.includes(".key")) {
+          const pattern = /URI="(.*?)"/;
+          const match = line.match(pattern);
+
+          if (match) {
+            const keyUri = match[1];
+
+            const file = await fetchFile(
               line.startsWith("http")
-                ? line.trim()
-                : baseUrl + "/" + line.trim(),
-              baseUrl
+                ? keyUri.trim()
+                : baseUrl + "/" + keyUri.trim()
             );
+
+            console.log(file);
+            console.log(parseFilename(keyUri));
+
+            writeFileRecursive(parseFilename(keyUri), file);
+            //ffmpeg.FS("writeFile", parseFilename(keyUri), file);
           }
         }
       }
@@ -69,15 +118,16 @@ const M3u8Downloader = () => {
         url = "https://" + m3u8linkUrl;
       }
 
-      const file = await fetchFile(url);
+      const file = await fetchFile(url); // encodeM3u8File(url);
       ffmpeg.FS("writeFile", `myfile.m3u8`, file);
 
       const baseUrl = url.substring(0, url.lastIndexOf("/"));
+
       await explorM3u8Url(url, baseUrl);
 
-      console.log("passou!!");
-
       await ffmpeg.run(
+        "-allowed_extensions",
+        "ALL",
         "-i",
         "myfile.m3u8",
         "-bsf:a",
